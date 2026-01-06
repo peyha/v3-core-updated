@@ -1,0 +1,10 @@
+[profile.default]
+src = "contracts"
+out = "out"
+libs = ["lib"]
+test = "test-foundry"
+optimizer = true
+optimizer_runs = 800
+bytecode_hash = 'none'
+via_ir = false
+solc = "0.8.27"
