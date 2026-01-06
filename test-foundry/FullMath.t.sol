@@ -6,7 +6,7 @@ import "../contracts/test/FullMathTest.sol";
 
 contract FullMathTestFoundry is Test {
     FullMathTest fullMath;
-    uint256 constant Q128 = 2**128;
+    uint256 constant Q128 = 2 ** 128;
     uint256 constant MAX_UINT256 = type(uint256).max;
 
     function setUp() public {
@@ -83,11 +83,7 @@ contract FullMathTestFoundry is Test {
 
     function testMulDivRoundingUp_RevertsIfMulDivOverflows256BitsAfterRoundingUp() public {
         vm.expectRevert();
-        fullMath.mulDivRoundingUp(
-            535006138814359,
-            432862656469423142931042426214547535783388063929571229938474969,
-            2
-        );
+        fullMath.mulDivRoundingUp(535006138814359, 432862656469423142931042426214547535783388063929571229938474969, 2);
     }
 
     function testMulDivRoundingUp_RevertsIfMulDivOverflows256BitsAfterRoundingUpCase2() public {

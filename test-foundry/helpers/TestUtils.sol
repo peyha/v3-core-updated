@@ -32,12 +32,12 @@ contract TestUtils is Test {
     }
 
     function expandTo18Decimals(uint256 n) internal pure returns (uint256) {
-        return n * 10**18;
+        return n * 10 ** 18;
     }
 
     // Helper for encoding price sqrt
     function encodePriceSqrt(uint256 reserve1, uint256 reserve0) internal pure returns (uint160) {
-        return uint160(sqrt((reserve1 * (2**192)) / reserve0));
+        return uint160(sqrt((reserve1 * (2 ** 192)) / reserve0));
     }
 
     // Babylonian method for sqrt

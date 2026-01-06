@@ -14,11 +14,7 @@ contract UniswapV3FactoryTest is TestUtils {
     address constant TEST_ADDRESS_1 = 0x2000000000000000000000000000000000000000;
 
     event PoolCreated(
-        address indexed token0,
-        address indexed token1,
-        uint24 indexed fee,
-        int24 tickSpacing,
-        address pool
+        address indexed token0, address indexed token1, uint24 indexed fee, int24 tickSpacing, address pool
     );
     event OwnerChanged(address indexed oldOwner, address indexed newOwner);
     event FeeAmountEnabled(uint24 indexed fee, int24 indexed tickSpacing);
@@ -42,7 +38,7 @@ contract UniswapV3FactoryTest is TestUtils {
     function testCreatePool_SucceedsForMediumFeePool() public {
         address pool = factory.createPool(TEST_ADDRESS_0, TEST_ADDRESS_1, FEE_MEDIUM);
         assertEq(factory.getPool(TEST_ADDRESS_0, TEST_ADDRESS_1, FEE_MEDIUM), pool);
-        
+
         UniswapV3Pool poolContract = UniswapV3Pool(pool);
         assertEq(poolContract.factory(), address(factory));
         assertEq(poolContract.token0(), TEST_ADDRESS_0);

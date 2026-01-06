@@ -26,7 +26,7 @@ contract LiquidityMathTestFoundry is Test {
 
     function testAddDelta_2Pow128Minus15Plus15Overflows() public {
         vm.expectRevert();
-        liquidityMath.addDelta(2**128 - 15, 15);
+        liquidityMath.addDelta(2 ** 128 - 15, 15);
     }
 
     function testAddDelta_0PlusNegative1Underflows() public {

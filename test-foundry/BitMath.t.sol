@@ -28,7 +28,7 @@ contract BitMathTestFoundry is Test {
 
     function testMostSignificantBit_AllPowersOf2() public {
         for (uint256 i = 0; i < 255; i++) {
-            assertEq(bitMath.mostSignificantBit(2**i), i);
+            assertEq(bitMath.mostSignificantBit(2 ** i), i);
         }
     }
 
@@ -67,7 +67,7 @@ contract BitMathTestFoundry is Test {
 
     function testLeastSignificantBit_AllPowersOf2() public {
         for (uint256 i = 0; i < 255; i++) {
-            assertEq(bitMath.leastSignificantBit(2**i), i);
+            assertEq(bitMath.leastSignificantBit(2 ** i), i);
         }
     }
 

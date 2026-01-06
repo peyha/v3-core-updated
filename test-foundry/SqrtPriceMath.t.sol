@@ -28,10 +28,7 @@ contract SqrtPriceMathTestFoundry is TestUtils {
 
     function testGetNextSqrtPriceFromInput_InputAmountOf01Token1() public {
         uint160 sqrtQ = sqrtPriceMath.getNextSqrtPriceFromInput(
-            encodePriceSqrt(1, 1),
-            uint128(expandTo18Decimals(1)),
-            expandTo18Decimals(1) / 10,
-            false
+            encodePriceSqrt(1, 1), uint128(expandTo18Decimals(1)), expandTo18Decimals(1) / 10, false
         );
         assertEq(sqrtQ, 87150978765690771352898345369);
     }
@@ -43,10 +40,7 @@ contract SqrtPriceMathTestFoundry is TestUtils {
 
     function testGetNextSqrtPriceFromOutput_OutputAmountOf01Token1() public {
         uint160 sqrtQ = sqrtPriceMath.getNextSqrtPriceFromOutput(
-            encodePriceSqrt(1, 1),
-            uint128(expandTo18Decimals(1)),
-            expandTo18Decimals(1) / 10,
-            false
+            encodePriceSqrt(1, 1), uint128(expandTo18Decimals(1)), expandTo18Decimals(1) / 10, false
         );
         assertEq(sqrtQ, 88031291682515930659493278152);
     }
@@ -58,10 +52,7 @@ contract SqrtPriceMathTestFoundry is TestUtils {
 
     function testGetAmount1Delta_ReturnsCorrectAmount() public {
         uint256 amount1 = sqrtPriceMath.getAmount1Delta(
-            encodePriceSqrt(1, 1),
-            encodePriceSqrt(121, 100),
-            uint128(expandTo18Decimals(1)),
-            true
+            encodePriceSqrt(1, 1), encodePriceSqrt(121, 100), uint128(expandTo18Decimals(1)), true
         );
         assertGt(amount1, 0);
     }
